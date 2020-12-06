@@ -1,0 +1,325 @@
+ECOR 1041 Lab 1 Solution Template 
+
+Author and Student Number: Adnan Hafeez 101210710
+
+This file is to be used in conjunction with the detailed lab description for Lab 1.
+Use this file to enter your answers to the series of exercises you will complete.
+
+=========================================================================================
+
+    Exploring Data Types and Operators
+
+=========================================================================================
+
+Exercise 1: A first interaction with the Python shell
+
+>>> 1+2
+
+Result (the value that was displayed): 3
+
+===========
+Exercise 2: Experiment - Do spaces matter?
+
+>>> 1 + 2
+
+Result: 3
+
+>>> 1     +       2
+
+Result: 3
+
+
+Concluding question (Record your conclusion here): What do you conclude about the significance of spaces in expressions? Does the number of spaces between the operands 
+and operator affect the evaluation? 
+
+The spaces between the operands and operator do not matter, they are merely there to help enhance visual code clarity. The number of spaces do not matter, whether you have 2 spaces versus 100, the expression, and result is the same.
+
+===========
+Exercise 3: Using the built-in function called type(), explore different data types.
+
+>>> type(1)
+
+Result: <class 'int'>
+
+>>> type(2)
+
+Result: <class 'int'>
+
+>>> type(0)
+
+Result: <class 'int'>
+
+>>> type(-1)
+
+Result: <class 'int'>
+
+>>> type(255)
+
+Result: <class 'int'>
+
+>>> type(-256)
+
+Result: <class 'int'>
+
+Concluding question: What type were all of these sample numbers?  
+integers
+
+===========
+Exercise 4: Explore arithmetic operations on integers (including negative integers).
+
+>>> 4 - 1
+
+Result: 3
+
+>>> 4 - 6
+
+Result: -2
+
+>>> 5 - -9
+
+Result: 14
+
+>>> -7 - -2
+
+Result: -5
+
+>>> 2 * 3
+
+Result: 6
+
+>>> 4 * -3
+
+Result: -12
+
+>>> -5 * -4
+
+Result: 20
+
+Concluding question: It appears that, for integer values, - is the subtraction operator and * is the multiplication operator. 
+What can you conclude about the types of the values produced by these operations?
+
+when multiplying, or adding (both negative and positive) integers, the return value was an integer as well.  As well the - operator produces a difference, and * operator produces a product.
+
+
+===========
+Exercise 5: Explore the arithmetic operation of division on integers
+
+>>> 6 / 2
+
+Result: 3.0
+
+>>> -6 / 2
+
+Result: -3.0
+
+>>> 6 / -2
+
+Result: -3.0
+
+>>> type(6 / -2)
+
+Result: <class 'float'>
+
+>>> 7 / 2
+
+Result: 3.5
+
+>>> type(7 / 2)
+
+Result: <class 'float'>
+
+>>> 10 / 3
+
+Result: 3.3333333333333335
+
+>>> type(10 / 3)
+
+Result: <class 'float'>
+
+Concluding Question: What is the type of the value produced when one integer is divided by another. 
+A float type is produced.
+
+===========
+Exercise 6: Explore compound arithmetic operations.
+
+>>> 1 + 2 + 3
+
+Result: 6
+
+>>> 5 - 1 - 1 - 1
+
+Result: 2
+
+>>> 2 * 2 * 3
+
+Result: 12
+
+>>> 12 / 3 / 2
+
+Result: 2.0
+
+Concluding Question: Does Python support more complicated expressions made up of several operands
+and operators? 
+Yes it does.
+
+===========
+Exercise 7: Explore operator precedence.
+
+>>> 1 + 2 * 3
+
+Result: 7
+
+>>> 2 * 3 + 1
+
+Result: 7
+
+Concluding Question: What do you conclude about the precedence of the * operator relative to the + operator?
+* has a precedence over the + operator. meaning the * operator is performed first.
+
+===========
+Exercise 8: Explore operator precedence further, with parentheses.
+
+>>> (1 + 2) * 3
+
+Result: 9
+
+>>> 2 * (3 + 1)
+
+Result: 8
+
+Compare these results to the ones you obtained in Exercise 7.
+
+Concluding Question: What do you conclude about the effect of parentheses on operator precedence?
+The parentheses has a higher order of precedence than the multiplication operator, regardless whether of their order when reading from left to right. This is why the results of exercise 7 are different from 8.
+
+===========
+Exercise 9: This exercise is different.  Instead of exploring a question using a supplied list of shell commands as your experiment, you are going to design your own experiment
+to answer the question by yourself. In a way, you'll be writing your own first program independently!
+
+In mathematics, an expression involving multiplication can sometimes be written in two ways:
+       2 x (3 + 4)    where the x multiplication operator is EXPLICITLY used
+       2 (3 + 4)      where the x multiplication operator is IMPLICITLY assumed.
+  
+The question is: Does Python support "implicit multiplication"?
+
+You must design an experiment (a series of shell commands, as in other exercises) which prove
+the answer one way or the other.
+
+Record your experiment's shell commands here:
+
+>>> 2*(3+4)
+
+Result: 14
+
+>>> (3+4)*2
+
+Result: 14
+
+>>> 2(3+4)
+
+Result: Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not callable
+
+>>> (3+4)2
+
+Result:  File "<stdin>", line 1
+    (3+4)2
+         ^
+SyntaxError: invalid syntax
+
+>>> 50*15
+
+Result: 750
+
+>>> 50(15)
+
+Result:Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not callable
+ 
+
+Record your conclusion here: Does Python support implicit multiplication?
+Python does not support implicit multiplication, it is necessary to explicitly write the multiplication operator, otherwise python interprets the situation as either a syntax error in the case of (3+4)2 or semantic error and tries to call a function that doesn't exist in the case of 2(3+4)
+
+===========
+Exercise 10: Explore the Python's exponentiation operator **.
+   NOTE: For advanced students, do not use Python's pow() function. Not yet. 
+
+>>> 3 ** 2
+
+Result: 9
+
+>>> -3 ** 2
+
+Result: -9
+
+Concluding question: Explain *WHY* the results of the second shell command is NOT 
+the square of -3. Describe the order of operations performed by the computer.
+The order of operations is read as follows: multiplication of negative 1 by 3 and exponential by 2 from left to right. In Python, the exponential operator takes precedence over the multiplication operator. So 3 is first squared to 9, and then multiplied by negative 1 to give -9 as the final result. This is not the same writing style that we commonly see in mathematics, where we write -1^2, and assume that the squared operation is over the entire object -3. Here python reads from left to right, assigning order of operations, and exponential takes precedence over multiplication. 
+
+Concluding question: Write a shell command that correctly calculates the square of -3? 
+You must use the ** operator. You must NOT use the pow() function.
+
+>>> (-3)**2
+
+===========
+
+Exercise 11: More exploration of division in Python.  Exercise 5 introduced the / operator.
+In this exercise, you will use the // operator.
+
+>> 11 // 4
+
+Prediction: 2
+
+>> -11 // 4
+
+Prediction: -3
+
+>> 11 // -4
+
+Prediction: -3
+
+>> -11 // -4
+
+Prediction: 2
+
+Concluding Question: Explain the difference between the / operator and the // operator.
+In your explanation, include descriptions of what results are produced for different
+combinations of signs (positive/negative)
+
+/ is a type of division that returns a float, a decimal point. // is an integer-floor division, it always performs division using a rounded down integer. This is what is meant by the "floor". Descriptions of the different returns depending on the sign of a number. For example if, 5/2 = 2.5 (type: float), -5/2 = -2.5 (type: float), 5/-2 = -2.5 (type: float), if 5//2 = 2 (type: int), 5//-2 = -3 (type: int) (the value -2.5 is rounded down, -2.5 rounds down to -3), if -5//2 = -3 (type: int), again the -2.5 is rounded to -3. The sign doesn't matter if its in on the dividend or divisor, the operation is the same. And signs also cancel out, -5//-2 = 3 (type: int). Furthermore, if one of your operands is a float, using the // division symbol, Python will calculate an integer division (it will do floor division, removing the value after the decimal) but  produce a float value at the end. For example, 4//3 = 1 (integer), but 4//3.0 = 1.0 (float). The float can be either in the denominator or nominator, the output is the same.
+
+
+===========
+
+Exercise 12: Exploring the Modulus Operator
+ TIP: Exercise 11 and 12 go together.  The sequence of commands is identical,
+except for a change in the operator.  
+
+>> 11 % 4
+
+Prediction: 3
+
+>> -11 % 4
+
+Prediction: 1
+
+>> 11 % -4
+
+Prediction: -1
+
+>> -11 % -4
+
+Prediction: -3
+
+Concluding Question: Explain the behaviour of the modulus operator. What value does it return?
+In your explanation, include descriptions of what results are produced for different
+combinations of signs (positive/negative)
+The modulus operator returns the remainder (r) when the first operand is divided by the second. The value type can either be integer or float depending on the type of the two operands.The general rule of thumb (or algorithm) is as follows, if "a" and "b" are positive literals. Then a % b = r, where r is the remainder when a is divided by b. If you have -a%b, the remainder is (b-r) where r is the remainder of a%b = r.  If you have a%-b your remainder is (-b+r), where r = a%b, and if you have -a%-b, your remainder is (-b+(b-r)) = -r, where r = a%b . The last one is broken down as follows, -a%b = b-r, and a%-b = (-b + r), where r is remainder (or output of ): -a%b. Combining these two gives -a%-b = -r where r is remainder of (+a%+b). And lastly, the modulus operator returns the remainder value with the sign of the divisor. Alternatively, this can be explained using simple float division and floor divisions with the formula (a/b - a//b)*b, and this formula is more intuitive in explaining why the sign of the remainder is always the same as the sign of b. Where a and b can be either positive or negative. For an example, if a = 11, and b = -4, for 11/-4 = -2.75, and for 11//-4 = -3, then -2.75-(-3) = 0.25, and finally 0.25*(-3) = -1.0, but since our a and b were integers, our final answer is also an integer -1
+
+
+=========================================================================================
+
+
+Last edited: October 27, 2020

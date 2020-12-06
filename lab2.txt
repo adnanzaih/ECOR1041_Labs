@@ -1,0 +1,116 @@
+ECOR 1041 Lab 2 Solution Template 
+
+Author and Student Number: Adnan Hafeez 101210710
+
+This file is to be used in conjunction with the detailed lab description for Lab 2.
+Use this file to enter your answers to the series of exercises you will complete.
+
+=========================================================================================
+
+Exploring Variables
+
+The exercises must be done in Python Tutor (pythontutor.com).
+Python Tutor is a great tool for VISUALIZING the execution of code and to understand
+the use of memory by a computer program.  Use the default SETTINGS:
+  - Hide Exited Frames
+  - Inline Primitives and try to nest objects
+  - Draw Pointers as Arrows
+
+Note: Python Tutor is a tool for LEARNING.  Wing 101 is a tool for writing real programs.
+They are both great, but have different purposes and strengths.
+
+============
+
+Exercise 1:  To convert a temperature measured on the Celsius scale to the 
+equivalent Fahrenheit temperature, we multiply the Celsius temperature by 9/5, then add 32. 
+For example, 20.0 degrees Celsius is equivalent to 68.0 degrees Fahrenheit.
+
+In Python Tutor's editor window:
+1. Type one assignment statement that creates a new variable named degrees_c and binds it to 20.0. 
+2. Type one assignment statement that converts the temperature bound to degrees_c to the 
+equivalent temperature in degrees Fahrenheit. This temperature should be bound to a 
+new variable named degrees_f.
+
+Click the Visualize Execution button. Execute the code, one statement at a time. 
+Observe the memory diagram as the code is executed, step-by-step. Verify that your code
+produces a result of 68.0 degrees Farenheit.
+
+When does variable degrees_c appear in the diagram? 
+The variable degrees_c appears first, it is the first variable that is created and assigned to a literal after the first line of the code is executed (degrees_c = 20.0)
+
+What is the name of the frame containing degrees_c? 
+Global frame
+
+When does variable degrees_f appear in the diagram?
+Appears after the degrees_f = degrees_c*(9/5)+32 is executed. It is the second variable that is created in the execution process.
+===========
+
+Exercise 2: In some countries, a vehicle's fuel efficiency is measured in miles per gallon. 
+In other countries, the efficiency is measured in litres per 100 km. 
+For example, 32 miles per Imperial gallon is equivalent to approximately 8.83 litres per 100 km.
+
+You're going to write Python statements that convert miles per gallon to litres per 100 km. 
+One Imperial gallon is equal to approximately 4.54609 litres. 
+One mile is equal to approximately 1.60934 km. 
+
+In Python Tutor's editor window:
+1. Type one assignment statement that creates a new variable named mpg and 
+binds it to the value 32 (which represents 32 miles per gallon).
+2. Type two assignment statements that create new constants named LITRES_PER_GALLON and 
+KMS_PER_MILE and binds them to the values 4.54609 and 1.60934, respectively. 
+(Note that the names of constant values in Python are, by convention, written in uppercase.)
+3. Type one assignment statement that converts the mileage bound to mpg to the equivalent fuel 
+consumption, measured in litres per 100 km. This value should be bound to a variable named 
+fuel_consumption.
+
+Click the Visualize Execution button. Execute the code, one statement at a time. 
+Observe the memory diagram as the code is executed, step-by-step. Verify that your code
+produces a result of 8.83 litres per 100 km.
+
+When do the variables appear in the diagram?
+In order in which they appear from first to last in the code: mpg, LITRES_PER_GALLON, KMS_PER_MILE, fuel_consumption. They appear after their assignment statements are executed.
+
+What are the types and values of the objects?
+mpg is a variable, and in this case its an int, because we assigned it an int value of 32, however it can be any type, such as float, if we assigned a float value. LITRES_PER_GALLON is a variable constant, and assigned a float (4.5461), similar for KMS_PER_MILE (constant variable) assigned a value of float (1.6093). fuel_consumption is a calculated variable, with a value of 8.8276 (float).
+
+===========
+
+Exercise 3: Consider these assignment statements:
+a = 9			# 1
+b = 4			# 2
+c = a * b		# 3
+d = b			# 4
+a = 2			# 5
+b = 3			# 6
+
+First, test your visualization skills by executing the given statements in your head,
+without using the Python shell or PyTutor to assist you.
+
+- Predict the value that will be bound to c AFTER Line 4 is executed: 36
+
+- Predict the value that will be bound to d AFTER Line 6 is executed: 4
+
+Confirm your answers by entering these statements in Python tutor and executing
+the code one statement at a time. Answer: Predictions were correct.
+
+Concluding Question: This set of statements is an experiment. What question is the
+experiment trying to answer? (i.e. What is proven by this exercise?)
+The observer is trying to answer that if a variable is changed after it's been assigned, does it automatically change previous variables that were related to it. This show/proves that python creates different memory addresses for each of the assignments, and even if a given variable is assigned two different values at different points in time (or execution), previously assigned memory addresses don't update, unless specifically reassigned with new assignment statements at a newer time or state. Say, at step 1 of code execution, a = 1, and b = a, if we were to check b's value at step 1, it would be b = 1. Now If at a later time, step 2, we reassigned a = 10, and asked what b is at step 2, its memory address won't update because it was never reassigned, it will refer to the old memory address and say b = 1.
+
+===========
+Exercise 4: Explore augmented operators. 
+
+In Python Tutor's editor window, enter the following and execute one statement at a time.
+
+x = 4
+x *= x - x
+
+Concluding Question: Write a short step-by-step explanation of how Python evaluates the
+second statement. 
+The first statement is an assignment statement, it declares a variable x, and assigns it an int (4) value. For the second step, we have an augmented statement. Python first calculates the right hand side of the statement, which is x - x. And then performs the operator on that value with the value on the left hand side of the operator expression. In our case, our operator is multiplication. In line 1, we assigned a literal integer to the variable x, x=4. Python uses this integer value to evaluate the right hand side of the augmented statement which gives x - x = 4 - 4 = 0 (integer). Python then takes this new integer value and evaluates the augmented statement as x = x*(0), which results in 0. So the final result is 0:
+ x *= x - x 
+-> x*=0 
+-> x = x*0
+-> x = 0
+
+Last edited: October 27, 2020
