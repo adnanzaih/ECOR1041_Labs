@@ -167,10 +167,11 @@ def reverse(lst: list) -> list:
     >>> reverse([])
     []
     """
-    new_lst = []
-    for i in range(len(lst)):
-        new_lst += [lst[len(lst) - 1 - i]]
-    return new_lst
+    for i in range(len(lst) // 2):
+        temp = lst[i]
+        lst[i] = lst[-(i + 1)]
+        lst[-(i + 1)] = temp
+    return lst
 
 # Automated Testing
 def test_function(testing_functions: list, expected: list, test_cases: list) -> None:
