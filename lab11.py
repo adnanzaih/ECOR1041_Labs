@@ -3,8 +3,8 @@
 
 #Exercise 1
 #Step 1
-point1 = [1.0,2.0]
-point1
+#point1 = [1.0,2.0]
+#point1
 
 #What is displayed when Python evaluates point1?
 #Python evalutes whats to the right of the equal sign, which is a list with two values. Two float objects are created 1.0,2.0
@@ -13,40 +13,40 @@ point1
 
 
 #Step 2
-point1.append(3.0)
-point1
+#point1.append(3.0)
+#point1
 #What is displayed when Python evaluates point1?
 #Answer [1.0,2.0,3.0]
 
-point1.pop(0)
-point1
+#point1.pop(0)
+#point1
 #What is displayed when Python evaluates point1?
 #[2.0,3.0]
 
-point1.pop(0)
-point1
+#point1.pop(0)
+#point1
 #What is displayed when Python evaluates point1?
 #[3.0]
 
 #Step 3
-point1 = (1.0,2.0)
-type(point1)
-point1
+#point1 = (1.0,2.0)
+#type(point1)
+#point1
 #What is displayed when Python evaluates point1?
 #<class 'tuple'>
 #(1.0,2.0)
 
 #Step 4
-x = point1[0]
-y = point1[1]
+#x = point1[0]
+#y = point1[1]
 #What is displayed when Python evaluates x and y?
 #1.0
 #2.0
 
-point2 = (4.0,6.0)
-x, y = point2
-x
-y
+#point2 = (4.0,6.0)
+#x, y = point2
+#x
+#y
 #What is displayed when Python evaluates x and y?
 #4.0
 #6.0
@@ -69,12 +69,12 @@ y
 #We cannot remove the first coordinate.
 
 #Step 6
-points = [(1.0, 5.0), (2.0, 8.0), (3.5, 12.5)]
-points[0]
+#points = [(1.0, 5.0), (2.0, 8.0), (3.5, 12.5)]
+#points[0]
 #Displays: (1.0,5.0)
-points[1]
+#points[1]
 #Displays: (2.0,8.0)
-points[2]
+#points[2]
 #Displays: (3.5,12.5)
 
 # Exercise 2
@@ -104,31 +104,31 @@ def average(lst: list) -> list:
     return return_list
 
 #Exercise 3
-points = {(1.0, 2.0), (4.0, 6.0), (10.0, -2.0)}
-points
+# points = {(1.0, 2.0), (4.0, 6.0), (10.0, -2.0)}
+# points
 #What is displayed when points is evaluated?
 #Answer: {(1.0, 2.0), (4.0, 6.0), (10.0, -2.0)}
 
 
-point1 = (1.0, 2.0)
-point2 = (4.0, 6.0)
-point3 = (10.0, -2.0)
-points = {point1, point2, point3}
-points
+# point1 = (1.0, 2.0)
+# point2 = (4.0, 6.0)
+# point3 = (10.0, -2.0)
+# points = {point1, point2, point3}
+# points
 #What is displayed when points is evaluated?
 #Answer: {(1.0, 2.0), (4.0, 6.0), (10.0, -2.0)}
-
-points = set()
-points.add(point1)
-points.add(point2)
-points.add(point3)
-points
+#
+# points = set()
+# points.add(point1)
+# points.add(point2)
+# points.add(point3)
+# points
 #What is displayed when points is evaluated?
 #Answer: {(1.0, 2.0), (4.0, 6.0), (10.0, -2.0)}
 
 #Step 2
-points.add(point2)
-points
+# points.add(point2)
+# points
 #What happens if we try to insert a point that is already in the set?
 #Answer: Nothing happens, sets can only contain distinct values, the extra addition is not added to the set,
 #and the original set is displayed with no change.
@@ -144,8 +144,8 @@ points
 
 #What is displayed when the loop is executed?
 
-for point in points:
-    print(point)
+# for point in points:
+#     print(point)
 
 #Answer: each tuple is printed on a seperate line as follows:
 #(1.0, 2.0)
@@ -162,9 +162,9 @@ def sum_x(st: set)-> float:
     >>> sum_x({(1.0,3.0)})
     1.0
     >>> sum_x({})
-    0
+    0.0
     >>> sum_x({()})
-    0
+    0.0
     """
     sum_x = 0
     for set_ in st:
