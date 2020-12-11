@@ -156,15 +156,12 @@ def average(lst: list) -> list:
 #Exercise 4
 def sum_x(st: set)-> float:
     """Returns the sum of all x-coordinates given a set containing n points represented by a tuple containing two float values.
-    The first float is coordinate x, and the second float is coordinate y.
+    The first float is coordinate x, and the second float is coordinate y. The first value inside the tuple is x.
     >>> sum_x({(1.0,3.0),(1.5,4.0),(5.9,1.0)})
     8.4
     >>> sum_x({(1.0,3.0)})
     1.0
     >>> sum_x({})
-    0.0
-    >>> sum_x({()})
-    0.0
     """
     sum_x = 0
     for set_ in st:

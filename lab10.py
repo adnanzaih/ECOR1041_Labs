@@ -86,13 +86,11 @@ def sum13(lst: list)-> int:
     if len(lst) == 0:
         return 0
     else:
+        if lst[0] != 13:
+            currentSum += lst[0]
         for i in range(len(lst)):
-            if i == 0:
-                if lst[0] != 13:
-                    currentSum += lst[0]
-            else:
-                if lst[i] != 13 and lst[i-1] != 13:
-                    currentSum += lst[i]
+            if lst[i] != 13 and lst[i-1] != 13:
+                currentSum += lst[i]
     return currentSum
 
 # Exercise 6
@@ -172,6 +170,7 @@ def reverse(lst: list) -> list:
         lst[i] = lst[-(i + 1)]
         lst[-(i + 1)] = temp
     return lst
+
 
 # Automated Testing
 def test_function(testing_functions: list, expected: list, test_cases: list) -> None:
